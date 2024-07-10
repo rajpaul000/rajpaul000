@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Responsive Bus Booking System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .active {
+            background-color: #4CAF50;
+            color: white;
+        }
+        form {
+            margin: 20px;
+            position: relative; /* Ensure relative positioning for the form */
+        }
+        input {
+            margin: 5px;
+            padding: 10px;
+            width: 100%;
+            display: inline-block;
+        }
+      
+        button {
+            margin-top: 10px; /* Added margin to separate Register button */
+            padding: 10px;
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="index.html" class="active">Register</a>
+        <a href="login.php">Login</a>
+    </div>
+
+    <!-- Registration Form -->
+    <form id="register" action="register.php" method="post">
+      
+        <h2>Register</h2>
+        <input type="text" name="name" placeholder="Name" required><br>
+        <input type="text" name="phone" placeholder="Phone" required><br>
+        <input type="password" name="password" id="password" placeholder="Password" required><br>
+        <div style="position: relative;">
+            <button type="button" class="show-password-btn" onclick="togglePassword()">Show Password</button>
+        </div>
+        <button type="submit">Register</button>
+       
+    </form>
+
+    <script>
+        function togglePassword() {
+            var passwordField = document.getElementById("password");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+            } else {
+                passwordField.type = "password";
+            }
+        }
+    </script>
+
+</body>
+</html>
